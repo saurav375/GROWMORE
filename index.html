@@ -1,0 +1,84 @@
+<script>
+    // 1. YOUTUBE CONFIGURATION
+    // I've updated this with your specific link ID!
+    const youtubeVideoId = 'ACksknQ-uWA'; 
+
+    let player;
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('yt-player', {
+            height: '0',
+            width: '0',
+            videoId: youtubeVideoId,
+            playerVars: { 
+                'autoplay': 0, 
+                'controls': 0, 
+                'loop': 1, 
+                'playlist': youtubeVideoId 
+            }
+        });
+    }
+
+    // Load YouTube API script
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    let clickedNotes = 0;
+    const messages = [
+        "I messed up... and i'm really sorry for that...",
+        "I promise i won't leave you",
+        "Please forgive me.... you are very valuable to me"
+    ];
+
+    function startLoading() {
+        // This starts your YouTube song when she clicks "check"
+        if (player && player.playVideo) {
+            player.playVideo();
+        }
+
+        document.getElementById('step1').classList.add('hidden');
+        document.getElementById('step2').classList.remove('hidden');
+        
+        let bar = document.getElementById('bar');
+        let percent = document.getElementById('percent');
+        let count = 0;
+        
+        let timer = setInterval(() => {
+            count += 10;
+            bar.style.width = (count / 10) + "%";
+            percent.innerText = count + "%";
+            
+            if (count >= 1000) {
+                clearInterval(timer);
+                document.getElementById('warning').classList.remove('hidden');
+            }
+        }, 18);
+    }
+
+    function showNotes() {
+        document.getElementById('step2').classList.add('hidden');
+        document.getElementById('step3').classList.remove('hidden');
+    }
+
+    function revealNote(element, num) {
+        if (!element.classList.contains('revealed')) {
+            element.innerText = messages[num-1];
+            element.classList.add('revealed');
+            clickedNotes++;
+            if (clickedNotes === 3) {
+                document.getElementById('seeMore').classList.remove('hidden');
+            }
+        }
+    }
+
+    function showFinal() {
+        document.getElementById('step3').classList.add('hidden');
+        document.getElementById('step4').classList.remove('hidden');
+    }
+
+    function openLetter() {
+        document.getElementById('step4').classList.add('hidden');
+        document.getElementById('step5').classList.remove('hidden');
+    }
+</script>

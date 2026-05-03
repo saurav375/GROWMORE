@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grow More | Spatial Wealth Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ios-bg: #000;
+            --glass: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --accent: #34c759;
+            --ios-blue: #007aff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, 'Inter', sans-serif;
+            background: var(--ios-bg);
+            background-image: radial-gradient(at 0% 0%, #1a472a 0, transparent 45%), radial-gradient(at 100% 100%, #0f2618 0, transparent 45%);
+            background-attachment: fixed;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Floating Nav Dock */
+        nav {
+            position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+            width: 90%; max-width: 1100px; height: 75px;
+            background: var(--glass); backdrop-filter: blur(40px) saturate(180%);
+            border: 1px solid var(--glass-border); border-radius: 25px;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0 30px; z-index: 10000;
+        }
+        .logo { font-weight: 900; font-size: 1.5rem; letter-spacing: -1.5px; }
+        .nav-btns { display: flex; gap: 12px; }
+        .btn-ios { 
+            padding: 10px 22px; border-radius: 40px; text-decoration: none; 
+            font-weight: 700; font-size: 0.85rem; transition: 0.3s;
+        }
+        .btn-outline { border: 1px solid var(--glass-border); color: #fff; }
+        .btn-fill { background: var(--ios-blue); color: #fff; }
+
+        main { padding-top: 160px; display: flex; flex-direction: column; align-items: center; }
+
+        .hero-title {
+            font-size: clamp(3rem, 10vw, 5.5rem); font-weight: 900; letter-spacing: -4px;
+            text-align: center; margin-bottom: 60px;
+            background: linear-gradient(180deg, #fff 40%, rgba(255,255,255,0.2));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        /* Portfolio Grid */
+        .invest-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px; width: 90%; max-width: 1200px; margin-bottom: 100px;
+        }
+
+        .invest-card {
+            background: var(--glass); border: 1px solid var(--glass-border);
+            border-radius: 40px; overflow: hidden; backdrop-filter: blur(20px);
+            transition: 0.5s cubic-bezier(0.2, 1, 0.2, 1);
+        }
+
+        /* Image Hover Effect */
+        .img-container { width: 100%; height: 220px; overflow: hidden; }
+        .card-img { 
+            width: 100%; height: 100%; object-fit: cover; 
+            transition: 0.8s ease; filter: brightness(0.8);
+        }
+        .invest-card:hover .card-img { transform: scale(1.15); filter: brightness(1); }
+        .invest-card:hover { border-color: var(--accent); transform: translateY(-10px); }
+
+        .card-body { padding: 35px; }
+        .card-body h3 { font-size: 1.6rem; margin-bottom: 15px; color: var(--accent); }
+        .card-body p { opacity: 0.6; font-size: 0.95rem; margin-bottom: 25px; }
+
+        /* Footer System */
+        footer {
+            width: 100%; background: rgba(255,255,255,0.03);
+            border-top: 1px solid var(--glass-border);
+            padding: 80px 10% 40px; display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px;
+        }
+        .footer-col h4 { color: var(--accent); font-size: 0.8rem; letter-spacing: 2px; margin-bottom: 20px; text-transform: uppercase; }
+        .footer-col a { display: block; color: rgba(255,255,255,0.5); text-decoration: none; margin-bottom: 12px; font-size: 0.9rem; }
+        .footer-col a:hover { color: #fff; }
+
+        .phone-big { font-size: 2rem; font-weight: 900; color: var(--ios-blue); text-decoration: none; }
+
+        /* Live Support Dot */
+        .live-status {
+            display: inline-flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--accent);
+            margin-bottom: 20px;
+        }
+        .dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">GROW MORE</div>
+        <div class="nav-btns">
+            <a href="tel:+919654615551" class="btn-ios btn-outline">Support</a>
+            <a href="tel:+919654615551" class="btn-ios btn-fill">Invest Now</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="live-status"><span class="dot"></span> Institutional Markets Online</div>
+        <h1 class="hero-title">Spatial Wealth.</h1>
+
+        <section class="invest-grid">
+            <div class="invest-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1611974717482-48a04531be7a?auto=format&fit=crop&w=800" class="card-img" alt="Equity">
+                </div>
+                <div class="card-body">
+                    <h3>Equity Growth</h3>
+                    <p>Harness global market volatility with AI-optimized stock portfolios.</p>
+                    <a href="tel:+919654615551" class="btn-ios btn-fill" style="display:block; text-align:center;">Start Investing</a>
+                </div>
+            </div>
+
+            <div class="invest-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&w=800" class="card-img" alt="Capital Shield">
+                </div>
+                <div class="card-body">
+                    <h3>Capital Shield</h3>
+                    <p>Institutional-grade security for generational wealth preservation.</p>
+                    <a href="tel:+919654615551" class="btn-ios btn-fill" style="display:block; text-align:center;">Secure Capital</a>
+                </div>
+            </div>
+
+            <div class="invest-card">
+                <div class="img-container">
+                    <img src="https://images.unsplash.com/photo-1523050335392-93851179ae22?auto=format&fit=crop&w=800" class="card-img" alt="Education">
+                </div>
+                <div class="card-body">
+                    <h3>Education Plus</h3>
+                    <p>Tailored SIP structures for international university fund growth.</p>
+                    <a href="tel:+919654615551" class="btn-ios btn-fill" style="display:block; text-align:center;">Plan Future</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-col">
+            <div class="logo" style="margin-bottom: 15px;">GROW MORE</div>
+            <p style="opacity: 0.4; font-size: 0.8rem;">Expert asset management under the iOS 26 Visual Framework.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Strategies</h4>
+            <a href="#">Mutual Funds</a>
+            <a href="#">REITs (Real Estate)</a>
+            <a href="#">Gold & Commodities</a>
+            <a href="#">ESG Investing</a>
+        </div>
+        <div class="footer-col">
+            <h4>Legal</h4>
+            <a href="#" onclick="alert('Refund Policy: Investment capital is subject to market risks. Exit loads may apply per scheme guidelines.')">Refund Policy</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Risk Disclosure</a>
+        </div>
+        <div class="footer-col">
+            <h4>Direct Channel</h4>
+            <a href="tel:+919654615551" class="phone-big">+91 9654615551</a>
+            <a href="mailto:sauravy2op@gmail.com">sauravy2op@gmail.com</a>
+        </div>
+    </footer>
+
+</body>
+</html>

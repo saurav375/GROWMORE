@@ -1,0 +1,25 @@
+<nav>
+    <div class="nav-left">
+        <a href="/index.html" class="logo">GROW MORE</a>
+    </div>
+    
+    <div class="nav-mid">
+        <div class="dropdown">
+            <button class="dropbtn">Investments ▾</button>
+            <div class="dropdown-content">
+                <a href="/services/equity.html">Stock Equity</a>
+                <a href="/services/education.html">Education Fund</a>
+                <a href="/services/retirement.html">Retirement</a>
+                <a href="/services/crypto.html">Digital Assets</a>
+            </div>
+        </div>
+        
+        <a href="/tools/calculator.html">Wealth Tools</a>
+        <a href="/market/live-data.html">Market Intelligence</a>
+    </div>
+
+    <div class="nav-right">
+        <a href="tel:+9654615551" class="phone-link">+9654615551</a>
+        <a href="/login.html" class="login-btn">Client Portal</a>
+    </div>
+</nav>
